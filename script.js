@@ -5,11 +5,11 @@ function generatePassword() {
 var userChoice = window.prompt ("Welcome to Safe Password Generator! First Choose a character length between 8 and 128 characters")
 
 // prompt for length of password (between 8-128)
-if (userChoice < 8 || userChoice < 128) {
+if (userChoice < 8 || userChoice > 128) {
   alert("Please choose a number between 8 and 128") 
-  return generatePassword();
+  return null;
 }
-else if(isNaN (userChoice)) {
+else if(Number.isNaN(userChoice)) {
   alert ("Invalid. Please enter a number choice between 8 and 128")
   return generatePassword();
 }
@@ -23,10 +23,10 @@ var comboArray = []
 
 // prompt to include character types for password 
 // confirm lowercase, uppercase, numeric, and/or special characters 
-var lowLet = window.confirm ("Would you like to include lowercase letters?");
-var upperLet = ("Would you like to include uppercase letters?");
-var num = ("Would you like to include numbers?");
-var special = ('Would you like to include special characters?');
+var lowLet = window.confirm ("Would you like to include lowercase letters?")
+var upperLet = ("Would you like to include uppercase letters?")
+var num = ("Would you like to include numbers?")
+var special = ('Would you like to include special characters?')
 // input needs to be validated w/ at least one character type selected 
 // generated password that matches selected criteria 
 // password displayed in alert or written to page
